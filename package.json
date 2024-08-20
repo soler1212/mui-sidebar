@@ -12,6 +12,10 @@
   "license": "MIT",
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.16.7",
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-interactions": "^8.2.9",
     "@storybook/addon-links": "^8.2.9",
@@ -37,6 +41,10 @@
     "vite": "^5.4.1"
   },
   "peerDependencies": {
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   }
