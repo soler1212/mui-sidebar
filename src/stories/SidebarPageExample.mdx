@@ -1,0 +1,15 @@
+{/* Sidebar.mdx */}
+
+import { Canvas, Meta } from '@storybook/blocks';
+import * as SidebarPageExample from './SidebarPageExample.stories';
+
+<Meta of={SidebarPageExample} />
+
+# Sidebar Component
+
+The sidebar behavior adapts based on screen size, toggling between a floating sidebar on smaller screens and a fixed sidebar on larger screens.
+
+To see this in action, click the "Open" button to toggle the sidebar. Adjust the screen width to observe how the sidebar switches between the floating and fixed modes.
+
+<Canvas of={SidebarPageExample.SidebarFloatingPageExample} />
+
