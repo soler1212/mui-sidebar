@@ -13,3 +13,77 @@ To see this in action, click the "Open" button to toggle the sidebar. Adjust the
 
 <Canvas of={SidebarMenuExample.SidebarFloatingExample} />
 
+# Full configuration of the example:
+
+```jsx
+<Stack height={"100%"} direction={"column"}>
+  <CssBaseline />
+  <Sidebar.ContextProvider largeScreenSettings={{ initalOpen: false }}>
+    <AppBar position="fixed">
+      <Sidebar.OuterContainer>
+        <Toolbar>
+          <Sidebar.ButtonOpen />
+          <Sidebar.ButtonClose />
+          <Box sx={{ width: "100%" }}>
+            <Typography variant="h6" component="h1">
+              A cool title
+            </Typography>
+          </Box>
+        </Toolbar>
+      </Sidebar.OuterContainer>
+    </AppBar>
+
+    <Sidebar>
+      <Toolbar>
+        <Stack
+          direction={"row"}
+          justifyContent={"space-between"}
+          style={{ width: "100%" }}
+        >
+          <Typography>Menu</Typography>
+          <Sidebar.ButtonClose />
+        </Stack>
+      </Toolbar>
+      <Divider />
+      <List component="nav">
+        <Sidebar.ListItem url="#" text="Link 1" icon={<Difference />} />
+        <Sidebar.ListItem url="#" text="Link 2" icon={<Description />} />
+        <Sidebar.ListItem url="#" text="Link 3" icon={<Class />} />
+        <Sidebar.ListItem
+          url=""
+          text="Link 4"
+          icon={<CollectionsBookmark />}
+        />
+      </List>
+    </Sidebar>
+    <Sidebar.OuterContainer>
+      <Box
+        component={"main"}
+        sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}
+      >
+        <Toolbar />
+        <Container sx={{ height: "100%" }}>
+          <Typography variant="h1">Here can go you'r outlet</Typography>
+        </Container>
+      </Box>
+    </Sidebar.OuterContainer>
+  </Sidebar.ContextProvider>
+</Stack>
+```
+## Key Concepts for Implementing the Sidebar
+To ensure the Sidebar functions as expected, follow these key concepts:
+
+1. Wrap All Content with `<Sidebar.ContextProvider>`
+Enclose all your content within the `<Sidebar.ContextProvider>` component. This provides the necessary context, allowing all child components to access and manage the Sidebar's state.
+
+2. Use the Sidebar Context
+Inside any component wrapped by `<Sidebar.ContextProvider>`, you can access and manipulate the Sidebar’s state using the Sidebar.useSidebarContext hook.
+
+3. Structure the Sidebar Layout
+    - Outer Content: Wrap the content that exists outside of the Sidebar with the `<Sidebar.OuterContainer>` component. This ensures proper layout and alignment.
+    - Sidebar Content: Wrap the content inside the Sidebar using the `<Sidebar>` component to define the Sidebar's internal structure.
+
+4. Optional Components. The following components are optional but can enhance the Sidebar's functionality:
+    - `<Sidebar.ButtonOpen />` - A button to open the Sidebar.
+    - `<Sidebar.ButtonClose />` - A button to close the Sidebar.
+    - `<Sidebar.ListItem />` - A component to represent individual items within the Sidebar.
