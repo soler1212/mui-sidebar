@@ -2,15 +2,21 @@
   "name": "mui-sidebar",
   "version": "1.0.0",
   "description": "MUI-Sidebar is a fully responsive and customizable sidebar component built with Material UI 5. This library provides an easy-to-use solution for integrating side navigation into your React applications, whether you're targeting small screens, large screens, or both. With a collection of well-designed components and hooks",
-  "main": "index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build-lib": "rollup -c"
+    "build-lib": "rollup -c --bundleConfigAsCjs"
   },
   "author": "Aleix Soler",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soler1212/mui-sidebar.git"
+  },
   "devDependencies": {
     "@babel/preset-react": "^7.24.7",
     "@chromatic-com/storybook": "^1.6.1",
@@ -20,6 +26,8 @@
     "@mui/material": "^5.16.7",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-interactions": "^8.2.9",
     "@storybook/addon-links": "^8.2.9",
@@ -41,6 +49,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rollup": "^4.21.1",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "storybook": "^8.2.9",
     "typescript": "^5.2.2",
     "vite": "^5.4.1"
