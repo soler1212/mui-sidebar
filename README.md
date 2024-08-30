@@ -13,7 +13,14 @@ Here are some example layouts demonstrating the responsive behavior of the `mui-
 - **Small Screen (Sidebar Opened):** ![Pasted image 20240815195523](https://github.com/user-attachments/assets/6b673fef-52e8-4611-a68b-5ba297dfd465)
 
 - **Large Screen (Sidebar Opened)** ![Pasted image 20240815195629](https://github.com/user-attachments/assets/d97c3389-694c-472c-a4d5-242845d3f805)
+## Installation
+To install the `mui-sidebar` library, you can use npm. Run the following command in your project directory:
 
+```bash
+npm install mui-sidebar
+```
+
+This will add `mui-sidebar`(https://www.npmjs.com/package/mui-sidebar) to your project's dependencies, allowing you to easily integrate it into your React application. 
 ## Available Components
 The `MUISidebar` library includes several key components that allow for easy integration and customization within your application:
 ### Essential Components
