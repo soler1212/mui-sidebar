@@ -38,6 +38,7 @@ declare const useSidebarContext: () => {
     isOpen: boolean;
     isLargeScreen: boolean;
     toggleDrawer: (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => void;
+    setDrawerVisibility: (open: boolean) => void;
 };
 
 interface SidebarProps {

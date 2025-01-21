@@ -11,6 +11,7 @@ export const SidebarContext = createContext<null | {
   isOpen: boolean;
   isLargeScreen: boolean;
   toggleDrawer: (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => void;
+  setDrawerVisibility: (open: boolean) => void;
 }>(null);
 
 interface SidebarContextProviderProps {
@@ -60,7 +61,7 @@ export const SidebarContextProvider: React.FC<SidebarContextProviderProps> = ({
   }, [isLargeScreen]);
 
 
-  const handleToggleMenu = (open: boolean, changedScreenSize=false) => {
+  const handleToggleMenu = (open: boolean, changedScreenSize = false) => {
     // INFO: On toggle menu manage the sizing when needed and toggle
     if (isLargeScreen) {
       if (open) {
@@ -72,7 +73,7 @@ export const SidebarContextProvider: React.FC<SidebarContextProviderProps> = ({
       if (changedScreenSize) {
         // INFO: When is large screen with opened menu and the screen is resized
         // to small screen close the menu to avoid bad UX
-        open=false;
+        open = false;
       }
       setOuterContainerWidth(0);
     }
@@ -81,7 +82,7 @@ export const SidebarContextProvider: React.FC<SidebarContextProviderProps> = ({
     setIsOpen(open);
   }
 
-  const toggleDrawer = (open: boolean) => (event?: React.KeyboardEvent | React.MouseEvent) => {
+  const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
     // INFO: Prevent some keyboard events and toggle the menu
     if (
       event &&
@@ -94,6 +95,7 @@ export const SidebarContextProvider: React.FC<SidebarContextProviderProps> = ({
     handleToggleMenu(open);
   };
 
+
   return <>
     <SidebarContext.Provider value={{
       navigationDrawerWidth,
@@ -101,7 +103,8 @@ export const SidebarContextProvider: React.FC<SidebarContextProviderProps> = ({
       setNavigationDrawerWidth,
       isOpen,
       isLargeScreen,
-      toggleDrawer
+      toggleDrawer,
+      setDrawerVisibility: handleToggleMenu
     }}>
       {children}
     </SidebarContext.Provider>
