@@ -81,7 +81,7 @@ export const SidebarContextProvider: React.FC<SidebarContextProviderProps> = ({
     setIsOpen(open);
   }
 
-  const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+  const toggleDrawer = (open: boolean) => (event?: React.KeyboardEvent | React.MouseEvent) => {
     // INFO: Prevent some keyboard events and toggle the menu
     if (
       event &&

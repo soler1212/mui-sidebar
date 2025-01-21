@@ -1,6 +1,6 @@
 {
   "name": "mui-sidebar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MUI-Sidebar is a fully responsive and customizable sidebar component built with Material UI 5. This library provides an easy-to-use solution for integrating side navigation into your React applications, whether you're targeting small screens, large screens, or both. With a collection of well-designed components and hooks",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
